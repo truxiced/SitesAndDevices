@@ -17,6 +17,7 @@ export class SitesComponent {
 
     siteKeys: Array<String>;
     sites: Object;
+    device: Object;
 
     constructor(private sitesService: SitesService, private deviceService: DevicesService){
         sitesService.getSites().then(sites => this.sites = sites)
@@ -25,8 +26,7 @@ export class SitesComponent {
 
     fetchDevice(deviceId) {
 
-        this.deviceService.getDevices(deviceId).then(devices => console.log(devices))
-        console.log(deviceId)
+        this.deviceService.getDevices(deviceId).then(devices => this.device = devices[Object.keys(devices)[0]])
 
     }
 

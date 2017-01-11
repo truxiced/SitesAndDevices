@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule }    from '@angular/http';
 
 import { SitesComponent } from 'app/components/sites/sites.component';
+import { DetailsComponent } from 'app/components/details/details.component';
 import { TreeComponent } from 'app/components/tree/tree.component';
 import { TreeItemComponent } from 'app/components/treeItem/treeItem.component';
 
@@ -13,7 +14,7 @@ import { ToggleIconDirective } from 'app/directives/toggleIcon/toggleIcon.direct
 
 @NgModule({
   imports:      [ BrowserModule, HttpModule ],
-  declarations: [ SitesComponent, TreeComponent, TreeItemComponent, ExpandDirective, ToggleIconDirective],
+  declarations: [ SitesComponent, DetailsComponent, TreeComponent, TreeItemComponent, ExpandDirective, ToggleIconDirective],
   bootstrap:    [ SitesComponent]
 })
 export class AppModule { }

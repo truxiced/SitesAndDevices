@@ -1,5 +1,9 @@
 <div class="sites">
 
+    <div class="page-header">
+        <h1>Resource Browser<small> Ordered by sites</small></h1>
+    </div>
+
     <div class="sites-tree-container col-md-3 col-md-offset-1" >
 
         <tree [sites]="sites" [keys]="siteKeys" (fetchDevice)="fetchDevice($event.deviceId)"></tree>
@@ -8,7 +12,7 @@
 
     <div class="sites-details-container col-md-6 col-md-offset-1">
 
-
+        <detailPanel [device]="device"></detailPanel>
     </div>
 
 </div>

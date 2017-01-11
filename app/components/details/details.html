@@ -1,0 +1,64 @@
+<div class="details">
+    <div *ngIf="device">
+
+        <h3 id="details-header">{{device.name}} - {{device.version}}</h3>
+
+        <div class="col-md-3">
+            <h4>General <img src="resources/img/information.png" height="24" width="24" ></h4>
+            <dl class="">
+                <dt>Type of Device</dt>
+                <dd>{{device.type}}</dd>
+                <dt>Device Model</dt>
+                <dd>{{device.model}}</dd>
+                <dt>Connected</dt>
+                <dd>{{device.connected}}</dd>
+                <dt>Enabled</dt>
+                <dd>{{device.enabled}}</dd>
+                <dt>Locked</dt>
+                <dd>{{device.locked}}</dd>
+            </dl>
+
+
+
+        </div>
+
+        <div class="col-md-3">
+
+            <h4>Software <img src="resources/img/software.png" height="24" width="24" ></h4>
+            <dl class="">
+                <dt>Upgrade Action</dt>
+                <dd>{{device.upgradeaction}}</dd>
+                <dt>Upgrade State</dt>
+                <dd>{{device.upgradestate}}</dd>
+                <dt>Current Version</dt>
+                <dd>{{device.version}}</dd>
+                <dt>Available Version</dt>
+                <dd>{{device.upgradeversion}}</dd>
+
+            </dl>
+
+        </div>
+
+        <div class="col-md-3" *ngIf="device.audio">
+
+            <h4>Audio <img src="resources/img/audio.png" height="24" width="24" ></h4>
+            <dl class="">
+                <dt>Audio Encoding</dt>
+                <dd>{{device.audio.source0.audioencoding}}</dd>
+                <dt>Input Gain</dt>
+                <dd>{{device.audio.source0.inputgain}}</dd>
+                <dt>Output Gain</dt>
+                <dd>{{device.audio.source0.outputgain}}</dd>
+                <dt>Input Type</dt>
+                <dd>{{device.audio.source0.inputtype}}</dd>
+                <dt>Enabled</dt>
+                <dd>{{device.audio.source0.enabled}}</dd>
+
+            </dl>
+
+        </div>
+
+    </div>
+</div>
+
+

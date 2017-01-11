@@ -29,6 +29,6 @@ export class DevicesService {
         return this.http.get(this.baseUrl + deviceId)
             .toPromise()
             //       .then(response => this.responseData = response)
-            .then(response => response.json().sites);
+            .then(response => response.json().devices);
     }
 }
