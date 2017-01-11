@@ -1,0 +1,18 @@
+<div class="treeItem" >
+    <div class="treeItem-container" (click)="toggleExpand()">
+
+        <div class="treeItem-iconToggle">
+            <img src="resources/img/icon-arrow-right-b-128.png" height="16" width="16" myToggleIcon [isExpanded]="isExpanded">
+        </div>
+
+        <div class="treeItem-iconSite">
+            <img src="resources/img/circle_location.png" height="24" width="24" >
+        </div>
+
+        <div class="treeItem-name">{{site.name}}</div>
+
+    </div>
+    <div class="treeItem-children" myExpand [isExpanded]="isExpanded" *ngFor="let key of deviceKeys" >
+            {{devices[key].name}}
+    </div>
+</div>
