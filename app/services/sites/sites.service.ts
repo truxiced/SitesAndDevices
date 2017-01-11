@@ -13,12 +13,12 @@ export interface criteria {
 @Injectable()
 export class SitesService {
 
-    private baseUrl: string = 'https://dev-api.avhs.axis.com/site.php?a=retrieve&u=avhs-test&p=AVHStest1024!&api=JSON';
+    private baseUrl: string = 'https://dev-api.avhs.axis.com/site.php';
 
-    private action = "retrieve";git
-    private user = "avhs-test";
-    private password = "AVHStest1024!";
-    private api = "JSON";
+    private action: string = "retrieve";
+    private user: string = "avhs-test";
+    private password: string = "AVHStest1024!";
+    private api: string = "JSON";
 
 
     constructor(private http : Http){
@@ -26,9 +26,8 @@ export class SitesService {
     }
 
     getSites() {
-        return this.http.get(this.baseUrl)
+        return this.http.get(this.baseUrl + `?a=${this.action}&u=${this.user}&p=${this.password}&api=${this.api}`)
             .toPromise()
-     //       .then(response => this.responseData = response)
             .then(response => response.json().sites);
     }
 }

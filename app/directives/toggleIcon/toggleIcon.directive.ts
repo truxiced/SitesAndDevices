@@ -7,7 +7,7 @@ import { Directive, ElementRef, Input, OnChanges} from '@angular/core';
 
 export class ToggleIconDirective implements OnChanges{
 
-    @Input() isExpanded;
+    @Input() isExpanded: boolean;
 
     constructor(private el: ElementRef) { }
 

@@ -13,22 +13,21 @@ export interface criteria {
 @Injectable()
 export class DevicesService {
 
-    private baseUrl: string = 'https://dev-api.avhs.axis.com/device.php?a=retrieve&u=avhs-test&p=AVHStest1024!&api=JSON&deviceid[]=';
+    private baseUrl: string = 'https://dev-api.avhs.axis.com/device.php';
 
-    private action = "retrieve";git
-    private user = "avhs-test";
-    private password = "AVHStest1024!";
-    private api = "JSON";
+    private action: string = "retrieve";
+    private user: string = "avhs-test";
+    private password: string = "AVHStest1024!";
+    private api: string = "JSON";
 
 
     constructor(private http : Http){
 
     }
 
-    getDevices(deviceId) {
-        return this.http.get(this.baseUrl + deviceId)
+    getDevices(deviceId: String) {
+        return this.http.get(this.baseUrl + `?a=${this.action}&u=${this.user}&p=${this.password}&api=${this.api}&deviceid[]=${deviceId}`)
             .toPromise()
-            //       .then(response => this.responseData = response)
             .then(response => response.json().devices);
     }
 }
