@@ -1,7 +1,7 @@
 /**
  * Created by Gustav Granelli on 1/11/17.
  */
-import {Component, Input, OnInit, HostListener} from '@angular/core';
+import {Component, Input, OnInit, HostListener, Output, EventEmitter} from '@angular/core';
 
 @Component({
 
@@ -14,6 +14,8 @@ import {Component, Input, OnInit, HostListener} from '@angular/core';
 export class TreeItemComponent implements OnInit{
     @Input() site;
 
+    @Output() fetchDevice = new EventEmitter();
+
     private deviceKeys;
     private devices;
     private isExpanded: boolean =false;
@@ -24,8 +26,10 @@ export class TreeItemComponent implements OnInit{
     }
 
     toggleExpand() {
-
         this.isExpanded = this.isExpanded ? false: true;
+    }
 
+    fetchSpecificDevice(deviceId) {
+        this.fetchDevice.emit({deviceId: deviceId});
     }
 }

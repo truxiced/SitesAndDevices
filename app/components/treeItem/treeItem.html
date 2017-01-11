@@ -12,7 +12,11 @@
         <div class="treeItem-name">{{site.name}}</div>
 
     </div>
-    <div class="treeItem-children" myExpand [isExpanded]="isExpanded" *ngFor="let key of deviceKeys" >
-            {{devices[key].name}}
+    <div class="treeItem-child" myExpand [isExpanded]="isExpanded" *ngFor="let key of deviceKeys" (click)="fetchSpecificDevice(devices[key].id)">
+        <div class="treeItem-child-iconDevice">
+            <img src="resources/img/device.png" height="24" width="24" >
+        </div>
+
+        <div class="treeItem-child-name">{{devices[key].name}}</div>
     </div>
 </div>

@@ -2,7 +2,7 @@
 
     <div class="sites-tree-container col-md-3 col-md-offset-1" >
 
-        <tree [sites]="sites" [keys]="siteKeys"></tree>
+        <tree [sites]="sites" [keys]="siteKeys" (fetchDevice)="fetchDevice($event.deviceId)"></tree>
 
     </div>
 

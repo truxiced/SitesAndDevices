@@ -43,3 +43,5 @@ typings
 # JavaScript
 *.js
 *.js.*
+
+*.DS_Store

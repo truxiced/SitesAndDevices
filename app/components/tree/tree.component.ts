@@ -1,7 +1,7 @@
 /**
  * Created by Gustav Granelli on 1/11/17.
  */
-import {Component, Input} from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
     moduleId: module.id,
@@ -14,4 +14,9 @@ export class TreeComponent {
     @Input() sites;
     @Input() keys;
 
+    @Output() fetchDevice = new EventEmitter();
+
+    fetchSpecificDevice(deviceId) {
+        this.fetchDevice.emit({deviceId: deviceId});
+    }
 }

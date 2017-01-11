@@ -1,7 +1,7 @@
 <div class="tree">
 
     <div *ngFor="let key of keys" >
-        <tree-item [site]="sites[key]"></tree-item>
+        <tree-item [site]="sites[key]" (fetchDevice)="fetchSpecificDevice($event.deviceId)"></tree-item>
     </div>
 </div>
 
