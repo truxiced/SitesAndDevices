@@ -43,5 +43,6 @@ typings
 # JavaScript
 *.js
 *.js.*
+!systemjs.config.js
 
 *.DS_Store
